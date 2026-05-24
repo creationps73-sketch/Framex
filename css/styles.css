@@ -1,0 +1,387 @@
+/* ==========================================================================
+   FRAMEX - Permanent Minimalist Luxury CSS Stylesheet
+   Palette: Black, White, Cream, & Off-White
+   ========================================================================== */
+
+/* Import Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@200;300;400;500;600&display=swap');
+
+:root {
+  /* Color Palette */
+  --soft-ivory: #F8F5EF;    /* Cream Background */
+  --off-white: #EFE9DD;     /* Secondary Off-White */
+  --pure-white: #FFFFFF;    /* Highlights & Cards */
+  --matte-black: #111111;   /* Primary Typography & Borders */
+  --rich-black: #0A0A0A;    /* Selection Highlights */
+  
+  /* Glass Colors */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(17, 17, 17, 0.06);
+
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Smooth Scroll */
+  scroll-behavior: smooth;
+}
+
+/* Custom Selection Highlight (Sleek Black Selection) */
+::selection {
+  background: var(--matte-black);
+  color: var(--soft-ivory);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--soft-ivory);
+  color: var(--matte-black);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Sleek Scrollbar (Light Theme) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--soft-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: #c5bfae;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--matte-black);
+}
+
+/* Elegant Typography System */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+  letter-spacing: 0.03em;
+}
+
+.font-sans-luxury {
+  font-family: var(--font-sans);
+  letter-spacing: 0.06em;
+}
+
+/* Glassmorphism Styles (Sleek White Glass) */
+.glass-panel-dark {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+}
+
+/* Cinematic Spotlights (Warm White Glow) */
+.gold-spotlight {
+  background: radial-gradient(circle 400px at center, rgba(255, 255, 255, 0.6) 0%, rgba(248, 245, 239, 0) 80%);
+  pointer-events: none;
+}
+
+.gold-spotlight-subtle {
+  background: radial-gradient(circle 300px at center, rgba(255, 255, 255, 0.5) 0%, rgba(248, 245, 239, 0) 100%);
+  pointer-events: none;
+}
+
+/* Matte Black Border Animation Triggers */
+.gold-draw-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-draw-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--matte-black);
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gold-draw-border:hover::after {
+  width: 100%;
+}
+
+/* Elegant Text Styling Hooks */
+.editorial-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  line-height: 1.15;
+}
+
+/* Magnetic Button Physics helpers */
+.magnetic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 3D Showcase Spot (Cream Canvas) */
+#three-canvas-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background: radial-gradient(circle at center, #efebd8 0%, #e2dac9 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  overflow: hidden;
+}
+
+/* 3D tilt photo grid card overlay effect */
+.tilt-card {
+  perspective: 1000px;
+}
+
+.tilt-card-inner {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+}
+
+.tilt-card:hover .tilt-card-inner {
+  transform: rotateY(8deg) rotateX(4deg);
+}
+
+.tilt-card-content {
+  transform: translateZ(30px);
+}
+
+/* --- Standard Neutral Text Overrides for Cream Backing --- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--matte-black);
+}
+
+p {
+  color: #404040 !important;
+}
+
+.text-neutral-100 {
+  color: var(--matte-black) !important;
+}
+
+.text-neutral-200 {
+  color: #222222 !important;
+}
+
+.text-neutral-300 {
+  color: #333333 !important;
+}
+
+.text-neutral-400 {
+  color: #4b5563 !important; /* Elegant charcoal slate */
+}
+
+.text-neutral-500 {
+  color: #6b7280 !important;
+}
+
+/* --- Navigation Links --- */
+nav a {
+  color: var(--matte-black) !important;
+}
+
+nav a:hover {
+  color: #555555 !important;
+}
+
+/* --- Collections Grid Options --- */
+/* We preserve white text on Collection Cards since they contain a dark overlay gradient over photos */
+#collections-grid .collection-card h3 {
+  color: var(--pure-white) !important;
+}
+
+#collections-grid .collection-card p {
+  color: #d4d4d4 !important;
+}
+
+#collections-grid .collection-card a {
+  color: var(--pure-white) !important;
+  border-bottom-color: var(--pure-white) !important;
+}
+
+#collections-grid .collection-card a:hover {
+  color: var(--off-white) !important;
+}
+
+/* --- Services Grid Cards (White Panels) --- */
+.service-card {
+  background-color: var(--pure-white) !important;
+  border: 1px solid rgba(17, 17, 17, 0.06) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.service-card:hover {
+  border-color: var(--matte-black) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Shop Products Section (Off-White Background) --- */
+#products-showcase {
+  background-color: rgba(239, 233, 221, 0.25) !important;
+}
+
+.product-card {
+  background-color: var(--pure-white) !important;
+  border: 1px solid rgba(17, 17, 17, 0.06) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+.product-card p {
+  color: #525252 !important;
+}
+
+.product-card button.add-to-cart-trigger {
+  background-color: var(--matte-black) !important;
+  color: var(--pure-white) !important;
+  border-color: var(--matte-black) !important;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.product-card button.add-to-cart-trigger:hover {
+  background-color: #333333 !important;
+  border-color: #333333 !important;
+}
+
+/* --- Testimonials & Box Overlay --- */
+.border-l-2.border-\[\#D4AF37\]\/35 {
+  border-color: var(--matte-black) !important;
+  background-color: rgba(17, 17, 17, 0.02) !important;
+}
+
+.border-l-2.border-\[\#D4AF37\]\/35 p {
+  color: var(--matte-black) !important;
+}
+
+/* --- E-commerce Shopping Cart Drawer --- */
+#cart-drawer {
+  background-color: var(--pure-white) !important;
+  border-left: 1px solid rgba(17, 17, 17, 0.08) !important;
+  color: var(--matte-black) !important;
+}
+
+#cart-drawer h3,
+#cart-drawer h4 {
+  color: var(--matte-black) !important;
+}
+
+#cart-items-list div {
+  border-bottom-color: rgba(17, 17, 17, 0.06) !important;
+}
+
+#cart-items-list h4 {
+  color: var(--matte-black) !important;
+}
+
+/* --- Memory Customizer Modal --- */
+#customizer-modal .glass-panel-dark {
+  background-color: var(--pure-white) !important;
+  border: 1px solid rgba(17, 17, 17, 0.08) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
+  color: var(--matte-black) !important;
+}
+
+#customizer-modal h3,
+#customizer-modal label,
+#customizer-modal span {
+  color: var(--matte-black) !important;
+}
+
+#customizer-modal .size-option,
+#customizer-modal .material-option {
+  border-color: rgba(17, 17, 17, 0.08) !important;
+  color: #4b5563 !important;
+}
+
+#customizer-modal .size-option.border-neutral-950,
+#customizer-modal .material-option.border-neutral-950 {
+  border-color: var(--matte-black) !important;
+  color: var(--matte-black) !important;
+}
+
+#customizer-modal .size-option span,
+#customizer-modal .material-option span {
+  color: #6b7280 !important;
+}
+
+#customizer-modal .size-option.border-neutral-950 span,
+#customizer-modal .material-option.border-neutral-950 span {
+  color: var(--matte-black) !important;
+}
+
+/* --- AI Chatbot Concierge panel --- */
+#chatbot-container {
+  background-color: var(--pure-white) !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.06);
+}
+
+#chatbot-container h4 {
+  color: var(--matte-black) !important;
+}
+
+#chatbot-container div.self-end {
+  background-color: #F3F4F6 !important;
+  border-color: #E5E7EB !important;
+  color: var(--matte-black) !important;
+}
+
+#chatbot-container div.self-start {
+  background-color: var(--pure-white) !important;
+  border-color: rgba(17, 17, 17, 0.08) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+  color: #374151 !important;
+}
+
+#chatbot-container .chat-suggested-q {
+  border-color: rgba(17, 17, 17, 0.08) !important;
+  color: #4b5563 !important;
+  background-color: rgba(17, 17, 17, 0.02) !important;
+}
+
+#chatbot-container .chat-suggested-q:hover {
+  border-color: var(--matte-black) !important;
+  color: var(--matte-black) !important;
+  background-color: #FAF9F5 !important;
+}
+
+#chatbot-container div.bg-neutral-950\/50 {
+  background-color: #F9FAFB !important;
+  border-top-color: #F3F4F6 !important;
+  color: #9CA3AF !important;
+}
+
+/* --- Minimal Footer --- */
+footer {
+  background-color: #FAF9F5 !important;
+  border-top: 1px solid rgba(17, 17, 17, 0.06) !important;
+}
+
+footer h4,
+footer h5 {
+  color: var(--matte-black) !important;
+}
+
+footer ul li,
+footer p,
+footer span,
+footer a {
+  color: #4b5563 !important;
+}
+
+footer a:hover {
+  color: var(--matte-black) !important;
+}
+
+footer div.border-t {
+  border-top-color: rgba(17, 17, 17, 0.06) !important;
+}

@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRAMEX - Bespoke Museum-Grade Photo Frames & Luxury Wedding Albums</title>
+  <meta name="description" content="Immerse yourself in FRAMEX. Handcrafted premium solid gold bevels, vintage walnut frames, and luxury leather albums. Archival fine-art museum-grade printing for high-end legacies.">
+  
+  <!-- Tailwind CSS v4 Browser Compiler -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+  <!-- Custom Luxury Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Lucide Line Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- GSAP Animation Engine + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js Library -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+
+  <!-- App Custom Scripts -->
+  <script src="js/animations.js" defer></script>
+  <script src="js/three-showcase.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body class="theme-transition relative selection:bg-[#111111] selection:text-[#0A0A0A]">
+
+
+
+  <!-- 2. Decorative Soft Golden Glow Backdrops -->
+  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] gold-spotlight-subtle rounded-full -translate-y-1/2 float-light-1 z-0"></div>
+  <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] gold-spotlight-subtle rounded-full translate-y-1/3 float-light-2 z-0"></div>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="fixed top-6 left-0 right-0 w-full z-50 px-4 md:px-8">
+    <div class="max-w-7xl mx-auto">
+      <nav class="glass-panel-dark text-neutral-100 rounded-full py-4 px-6 md:px-10 flex items-center justify-between shadow-2xl transition-all duration-300 dark:bg-[rgba(17,17,17,0.7)] bg-[rgba(255,255,255,0.85)] dark:text-neutral-100 text-neutral-900 border dark:border-[rgba(17,17,17,0.06)] border-[rgba(17,17,17,0.06)]">
+        <!-- Brand Logo -->
+        <a href="#" class="font-serif-luxury text-2xl md:text-3xl font-light tracking-[0.15em] hover:text-[#111111] transition-colors relative z-10 select-none">
+          FRAMEX<span class="text-[#111111]">.</span>
+        </a>
+
+        <!-- Center Nav Items -->
+        <ul class="hidden lg:flex items-center gap-10 font-sans-luxury text-[11px] font-medium tracking-[0.2em] uppercase">
+          <li><a href="#collections" class="hover:text-[#111111] transition-colors gold-draw-border pb-1">Collections</a></li>
+          <li><a href="#three-showcase-section" class="hover:text-[#111111] transition-colors gold-draw-border pb-1">3D Gallery</a></li>
+          <li><a href="#services" class="hover:text-[#111111] transition-colors gold-draw-border pb-1">Bespoke Services</a></li>
+          <li><a href="#products-showcase" class="hover:text-[#111111] transition-colors gold-draw-border pb-1">Shop</a></li>
+          <li>
+            <button class="open-customizer-trigger hover:text-[#111111] transition-colors text-[#111111] font-semibold flex items-center gap-1.5 cursor-pointer">
+              <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Custom Designer
+            </button>
+          </li>
+        </ul>
+
+        <!-- Action Items (Right) -->
+        <div class="flex items-center gap-6 relative z-10">
+          
+
+          <!-- Search Trigger -->
+          <button id="search-toggle-btn" class="p-2 text-neutral-400 hover:text-[#111111] transition-colors rounded-full cursor-pointer" title="Search catalog">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </button>
+
+          <!-- Shopping Cart Trigger -->
+          <button id="cart-toggle-btn" class="relative p-2 text-neutral-400 hover:text-[#111111] transition-colors rounded-full cursor-pointer" title="Open Cart">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span class="cart-count-badge absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-[#111111] text-[#0A0A0A] text-[9px] font-bold flex items-center justify-center opacity-0 transition-opacity">0</span>
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button class="lg:hidden p-2 text-neutral-400 hover:text-[#111111] transition-colors cursor-pointer">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden z-10">
+    <div class="max-w-7xl w-full mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left Side Cinematic Typography -->
+      <div class="lg:col-span-7 text-left space-y-8 select-none z-10">
+        <div class="space-y-4">
+          <span class="hero-reveal block font-sans-luxury text-xs font-semibold uppercase tracking-[0.3em] text-[#111111] mb-2">
+            The Art of Handcrafted Storytelling
+          </span>
+          <h1 class="hero-reveal font-serif-luxury text-5xl md:text-7xl font-extralight tracking-tight leading-[1.08] dark:text-neutral-100 text-neutral-900">
+            Legacies Mounted <br>
+            <span class="italic font-light text-[#111111]">In Burnished Gold.</span>
+          </h1>
+        </div>
+        
+        <p class="hero-reveal font-sans-luxury text-neutral-400 text-sm md:text-base font-light max-w-xl leading-relaxed">
+          FRAMEX preserves your high-end memories in handcrafted solid gold, premium wood and frameless acrylic mountings. Made with museum-grade fine-art prints designed to endure generations.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-reveal flex flex-wrap items-center gap-6 pt-4">
+          <!-- Magnetic Explore Button -->
+          <a href="#collections" class="magnetic-btn group bg-[#111111] hover:bg-[#222222] text-white font-semibold text-xs tracking-[0.2em] uppercase py-4.5 px-9 rounded-full transition-all duration-300 shadow-[0_4px_30px_rgba(17,17,17,0.08)] flex items-center gap-2">
+            <span class="magnetic-text flex items-center gap-2">
+              Explore Collections <i data-lucide="chevron-right" class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"></i>
+            </span>
+          </a>
+
+          <!-- Magnetic Customizer Link -->
+          <button class="open-customizer-trigger magnetic-btn border border-[#111111]/40 hover:border-[#111111] hover:bg-[#111111]/5 text-neutral-300 dark:text-neutral-300 text-neutral-800 font-semibold text-xs tracking-[0.2em] uppercase py-4.5 px-9 rounded-full transition-all duration-300 flex items-center gap-2 cursor-pointer">
+            <span class="magnetic-text flex items-center gap-2">
+              Design Your Memory <i data-lucide="crop" class="w-3.5 h-3.5"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Side 3D Photo Frame Graphic Mockup -->
+      <div class="lg:col-span-5 flex justify-center float-element-hero relative">
+        <div class="relative w-[300px] h-[400px] md:w-[340px] md:h-[455px] bg-[#111111] p-6 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border-4 border-[#111111] rounded-sm transform rotate-3 flex items-center justify-center transition-all duration-500 hover:rotate-0 hover:scale-105 select-none hover:shadow-[0_30px_80px_rgba(17,17,17,0.06)]">
+          <!-- Glass Reflective Highlight -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none z-20 rounded-sm"></div>
+          
+          <!-- Outer border glow -->
+          <div class="absolute -inset-1 rounded-sm border border-[#111111]/35 shadow-[0_0_20px_rgba(17,17,17,0.06)] pointer-events-none"></div>
+
+          <!-- Mat Boarding -->
+          <div class="w-full h-full bg-[#F8F5EF] p-7 shadow-inner flex items-center justify-center rounded-sm">
+            <!-- Fine-Art Portrait Art Inside Frame -->
+            <div class="w-full h-full bg-[#EAEAEA] shadow-[inset_0_2px_8px_rgba(0,0,0,0.12)] relative overflow-hidden rounded-sm">
+              <img src="assets/hero_portrait.png" alt="FRAMEX Luxury Wedding Legacy" class="hero-image-scale w-full h-full object-cover grayscale-25 transition-transform duration-[2.5s] hover:scale-110">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interactive floating gold particle decorations -->
+        <div class="absolute -top-6 -right-6 w-12 h-12 rounded-full bg-gradient-to-tr from-[#111111] to-[#222222] blur-xl opacity-30 animate-pulse"></div>
+        <div class="absolute -bottom-8 -left-8 w-16 h-16 rounded-full bg-gradient-to-tr from-[#111111] to-[#111111] blur-2xl opacity-20"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FEATURE HIGHLIGHTS BAR ==================== -->
+  <section id="feature-bar" class="relative py-12 z-10 border-y dark:border-neutral-900 border-neutral-200 bg-neutral-950/20 dark:bg-neutral-950/25 bg-[#FAF9F5]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 items-center justify-items-center text-center">
+        
+        <!-- Item 1 -->
+        <div class="feature-bar-item flex flex-col items-center gap-3">
+          <i data-lucide="award" class="w-5 h-5 text-[#111111]"></i>
+          <span class="font-sans-luxury text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.2em] dark:text-neutral-300 text-neutral-700">Premium Quality</span>
+          <p class="text-[9px] text-neutral-500 uppercase tracking-widest">Italian Gold Leaf Bevels</p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="feature-bar-item flex flex-col items-center gap-3 border-l dark:border-neutral-900 border-neutral-200/80 w-full">
+          <i data-lucide="scissors" class="w-5 h-5 text-[#111111]"></i>
+          <span class="font-sans-luxury text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.2em] dark:text-neutral-300 text-neutral-700">Custom Made</span>
+          <p class="text-[9px] text-neutral-500 uppercase tracking-widest">Tailored to your memory</p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="feature-bar-item flex flex-col items-center gap-3 border-l dark:border-neutral-900 border-neutral-200/80 w-full">
+          <i data-lucide="package" class="w-5 h-5 text-[#111111]"></i>
+          <span class="font-sans-luxury text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.2em] dark:text-neutral-300 text-neutral-700">Secure Delivery</span>
+          <p class="text-[9px] text-neutral-500 uppercase tracking-widest">Museum Gift Boxed</p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="feature-bar-item flex flex-col items-center gap-3 border-l dark:border-neutral-900 border-neutral-200/80 w-full">
+          <i data-lucide="shield-check" class="w-5 h-5 text-[#111111]"></i>
+          <span class="font-sans-luxury text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.2em] dark:text-neutral-300 text-neutral-700">100% Guarantee</span>
+          <p class="text-[9px] text-neutral-500 uppercase tracking-widest">Archival color life</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COLLECTION SECTION ==================== -->
+  <section id="collections" class="relative py-28 z-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center space-y-16">
+      
+      <!-- Section Title -->
+      <div class="space-y-4">
+        <span class="font-sans-luxury text-[10px] font-semibold uppercase tracking-[0.3em] text-[#111111]">Bespoke Portfolios</span>
+        <h2 class="font-serif-luxury text-4xl md:text-5xl font-light tracking-tight dark:text-neutral-100 text-neutral-900">
+          The Curated Collections
+        </h2>
+        <div class="w-12 h-[1px] bg-[#111111] mx-auto mt-6"></div>
+      </div>
+
+      <!-- Balanced Spaced Grid -->
+      <div id="collections-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        
+        <!-- Card 1: Wedding Albums -->
+        <div class="collection-card interactive-card group relative h-[450px] overflow-hidden border border-neutral-900 shadow-2xl rounded-sm">
+          <!-- Background image zoom -->
+          <img src="assets/collection_wedding.png" alt="Wedding Albums" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10"></div>
+          <!-- Reflection -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"></div>
+          <!-- Card info -->
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-30 space-y-3">
+            <span class="text-[10px] font-semibold text-[#111111] tracking-[0.2em] uppercase font-sans-luxury">Legacy Craftsmanship</span>
+            <h3 class="font-serif-luxury text-2xl font-light text-[#FFFFFF]">Wedding Albums</h3>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Genuine Italian leather-bound portfolios displaying your wedding day narrative in heavy layflat cotton papers.</p>
+            <a href="#products-showcase" class="inline-flex items-center gap-1.5 text-xs text-[#111111] font-semibold tracking-wider uppercase pt-2 group/btn">
+              Explore Portfolio <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Luxury Photo Frames -->
+        <div class="collection-card interactive-card group relative h-[450px] overflow-hidden border border-neutral-900 shadow-2xl rounded-sm">
+          <img src="assets/hero_portrait.png" alt="Luxury Photo Frames" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-30 space-y-3">
+            <span class="text-[10px] font-semibold text-[#111111] tracking-[0.2em] uppercase font-sans-luxury">Double-Bevel Borders</span>
+            <h3 class="font-serif-luxury text-2xl font-light text-[#FFFFFF]">Luxury Photo Frames</h3>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Handmade burnished gold leaf profiles, solid walnut moldings and exquisite matting options tailored precisely.</p>
+            <a href="#products-showcase" class="inline-flex items-center gap-1.5 text-xs text-[#111111] font-semibold tracking-wider uppercase pt-2 group/btn">
+              Explore Portfolio <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Acrylic Frames -->
+        <div class="collection-card interactive-card group relative h-[450px] overflow-hidden border border-neutral-900 shadow-2xl rounded-sm">
+          <img src="assets/collection_acrylic.png" alt="Acrylic Frames" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-30 space-y-3">
+            <span class="text-[10px] font-semibold text-[#111111] tracking-[0.2em] uppercase font-sans-luxury">High-Refraction Glass</span>
+            <h3 class="font-serif-luxury text-2xl font-light text-[#FFFFFF]">Acrylic Frames</h3>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Modern double-thick acrylic glass mountings that achieve incredible luminescence, depth, and three-dimensional floating beauty.</p>
+            <a href="#products-showcase" class="inline-flex items-center gap-1.5 text-xs text-[#111111] font-semibold tracking-wider uppercase pt-2 group/btn">
+              Explore Portfolio <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: Wall Art Frames -->
+        <div class="collection-card interactive-card group relative h-[450px] overflow-hidden border border-neutral-900 shadow-2xl rounded-sm md:col-span-2">
+          <img src="assets/collection_wallart.png" alt="Wall Art Frames" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent z-10"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-8 z-30 space-y-3 max-w-xl">
+            <span class="text-[10px] font-semibold text-[#111111] tracking-[0.2em] uppercase font-sans-luxury">Exhibition Scale</span>
+            <h3 class="font-serif-luxury text-2xl md:text-3xl font-light text-[#FFFFFF]">Wall Art Frames & Panels</h3>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Bespoke monumental size wood panels and statement metal-mounted framing to convert blank residential walls into private modern museums.</p>
+            <a href="#products-showcase" class="inline-flex items-center gap-1.5 text-xs text-[#111111] font-semibold tracking-wider uppercase pt-2 group/btn">
+              Explore Portfolio <i data-lucide="arrow-right" class="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5: Vintage Collection -->
+        <div class="collection-card interactive-card group relative h-[450px] overflow-hidden border border-neutral-900 shadow-2xl rounded-sm">
+          <!-- Using rich dark color block with textures and elegant overlay since it's the vintage line -->
+          <div class="absolute inset-0 bg-gradient-to-br from-[#1C1711] to-[#0A0A0A] flex items-center justify-center p-8 text-center border-b border-neutral-800">
+            <div class="absolute inset-0 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+            <div class="border border-[#111111]/20 p-8 w-full h-full flex flex-col justify-between items-center relative">
+              <span class="text-[9px] font-bold text-[#111111] tracking-[0.3em] uppercase">Limited Reserve</span>
+              <div class="space-y-4">
+                <i data-lucide="compass" class="w-8 h-8 text-[#111111] mx-auto animate-spin-slow"></i>
+                <h3 class="font-serif-luxury text-3xl font-light text-[#FFFFFF] tracking-wide">Vintage Collection</h3>
+                <p class="text-xs text-neutral-400 font-light max-w-xs mx-auto">Reclaiming rare antique European moldings, hand-finished in gold leaf with classic ornamental filigree details.</p>
+              </div>
+              <span class="text-[10px] text-neutral-500 uppercase tracking-widest">Released Seasonally</span>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 3D FRAME SHOWCASE ==================== -->
+  <section id="three-showcase-section" class="relative py-28 bg-[#111111]/40 border-y dark:border-neutral-900 border-neutral-200/80 z-10 overflow-hidden">
+    <!-- Spot shadow reactive -->
+    <div class="absolute inset-0 gold-spotlight z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+      
+      <!-- Left Column: WebGL Interactive Scene -->
+      <div class="lg:col-span-7 flex flex-col items-center">
+        <!-- Interactive 3D Canvas Box -->
+        <div id="three-canvas-container" class="shadow-[0_30px_90px_rgba(0,0,0,0.9)]">
+          <!-- Instruction Overlay -->
+          <div class="absolute bottom-4 left-0 right-0 text-center pointer-events-none z-10 select-none">
+            <span class="font-sans-luxury text-[9px] font-bold uppercase tracking-[0.2em] text-[#111111]/75 bg-neutral-950/70 border border-[#111111]/15 py-2 px-4 rounded-full">
+              <i data-lucide="orbit" class="w-3 h-3 inline mr-1 animate-pulse"></i> Move Cursor to Inspect - Scroll to Spin
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Explanatory Details -->
+      <div class="lg:col-span-5 text-left space-y-8 select-none">
+        <div class="space-y-4">
+          <span class="font-sans-luxury text-[10px] font-semibold uppercase tracking-[0.3em] text-[#111111]">Virtual 3D Studio</span>
+          <h2 class="font-serif-luxury text-4xl md:text-5xl font-light tracking-tight dark:text-neutral-100 text-neutral-900 leading-tight">
+            Immersion in <br>
+            Bespoke Details
+          </h2>
+          <div class="w-12 h-[1px] bg-[#111111] mt-6"></div>
+        </div>
+
+        <p class="font-sans-luxury text-neutral-400 text-sm font-light leading-relaxed">
+          Hover your mouse over the WebGL viewport to cast reactive golden spotlights on our metallic gold leaf bevels and ivory paper mat boards. At FRAMEX, physical assembly matches mathematical precision.
+        </p>
+
+        <!-- Dynamic Specs list -->
+        <ul class="space-y-5 font-sans-luxury text-xs text-neutral-300">
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#111111] mt-1.5"></span>
+            <div>
+              <strong class="text-neutral-100 block font-medium">Italian Gilding Borders</strong>
+              <span class="text-neutral-400 text-[11px] font-light">Double bevel wooden moldings overlaid manually in gold leaf leafing.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#111111] mt-1.5"></span>
+            <div>
+              <strong class="text-neutral-100 block font-medium">Fine Cotton Matting</strong>
+              <span class="text-neutral-400 text-[11px] font-light">Acid-free pure ivory mats preventing photo aging and yellowing.</span>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#111111] mt-1.5"></span>
+            <div>
+              <strong class="text-neutral-100 block font-medium">Refractive Glass Overlay</strong>
+              <span class="text-neutral-400 text-[11px] font-light">Museum-grade anti-reflection and 99% UV-protective glass shield.</span>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Design memory trigger -->
+        <button class="open-customizer-trigger bg-neutral-900 border border-[#111111]/30 hover:border-[#111111] hover:bg-neutral-900/80 text-[#111111] font-semibold text-[10px] tracking-[0.25em] uppercase py-4 px-8 rounded-full transition-all duration-300 flex items-center gap-2 cursor-pointer mt-4 shadow-xl">
+          Configure Your Frame <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES SECTION ==================== -->
+  <section id="services" class="relative py-28 z-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center space-y-16">
+      
+      <!-- Section Title -->
+      <div class="space-y-4">
+        <span class="font-sans-luxury text-[10px] font-semibold uppercase tracking-[0.3em] text-[#111111]">Artisan Care</span>
+        <h2 class="font-serif-luxury text-4xl md:text-5xl font-light tracking-tight dark:text-neutral-100 text-neutral-900">
+          The Bespoke Services
+        </h2>
+        <div class="w-12 h-[1px] bg-[#111111] mx-auto mt-6"></div>
+      </div>
+
+      <!-- Services Grid -->
+      <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        
+        <!-- Service 1 -->
+        <div class="service-card interactive-card p-8 border border-neutral-900 hover:border-[#111111]/20 bg-neutral-950/20 rounded-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between h-[250px]">
+          <div class="space-y-4">
+            <i data-lucide="crop" class="w-6 h-6 text-[#111111]"></i>
+            <h3 class="font-serif-luxury text-xl font-medium tracking-wide dark:text-neutral-100 text-neutral-900">Custom Frame Design</h3>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">Artisanal digital customizer enabling size, border materials, mounting mats, and framing layouts configured step-by-step.</p>
+          </div>
+          <button class="open-customizer-trigger text-xs text-[#111111] font-semibold tracking-widest uppercase hover:underline text-left cursor-pointer">Configure <i data-lucide="arrow-right" class="w-3 h-3 inline ml-1"></i></button>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card interactive-card p-8 border border-neutral-900 hover:border-[#111111]/20 bg-neutral-950/20 rounded-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between h-[250px]">
+          <div class="space-y-4">
+            <i data-lucide="book-open" class="w-6 h-6 text-[#111111]"></i>
+            <h3 class="font-serif-luxury text-xl font-medium tracking-wide dark:text-neutral-100 text-neutral-900">Wedding Albums</h3>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">Collaborate with our master editors to design bespoke flush-mounted leather albums that turn your wedding catalog into an heirloom.</p>
+          </div>
+          <a href="#products-showcase" class="text-xs text-[#111111] font-semibold tracking-widest uppercase hover:underline">Explore <i data-lucide="arrow-right" class="w-3 h-3 inline ml-1"></i></a>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card interactive-card p-8 border border-neutral-900 hover:border-[#111111]/20 bg-neutral-950/20 rounded-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between h-[250px]">
+          <div class="space-y-4">
+            <i data-lucide="printer" class="w-6 h-6 text-[#111111]"></i>
+            <h3 class="font-serif-luxury text-xl font-medium tracking-wide dark:text-neutral-100 text-neutral-900">Premium Fine-Art Printing</h3>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">Archival cotton rag printing using high-density carbon inks for incredible shadows and long-term museum permanence.</p>
+          </div>
+          <a href="#products-showcase" class="text-xs text-[#111111] font-semibold tracking-widest uppercase hover:underline">View Prints <i data-lucide="arrow-right" class="w-3 h-3 inline ml-1"></i></a>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card interactive-card p-8 border border-neutral-900 hover:border-[#111111]/20 bg-neutral-950/20 rounded-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between h-[250px]">
+          <div class="space-y-4">
+            <i data-lucide="layout-grid" class="w-6 h-6 text-[#111111]"></i>
+            <h3 class="font-serif-luxury text-xl font-medium tracking-wide dark:text-neutral-100 text-neutral-900">Wall Art Layout Setup</h3>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">Upload room images, and our professional curators will draft architectural CAD arrangements to form balanced gallery walls.</p>
+          </div>
+          <a href="#products-showcase" class="text-xs text-[#111111] font-semibold tracking-widest uppercase hover:underline">Inquire <i data-lucide="arrow-right" class="w-3 h-3 inline ml-1"></i></a>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card interactive-card p-8 border border-neutral-900 hover:border-[#111111]/20 bg-neutral-950/20 rounded-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between h-[250px]">
+          <div class="space-y-4">
+            <i data-lucide="gift" class="w-6 h-6 text-[#111111]"></i>
+            <h3 class="font-serif-luxury text-xl font-medium tracking-wide dark:text-neutral-100 text-neutral-900">Bespoke Corporate Gifting</h3>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">Personalized frames, stamped certificates, wood seals, and bespoke gold logo details for ultra-exclusive gifting requirements.</p>
+          </div>
+          <a href="#products-showcase" class="text-xs text-[#111111] font-semibold tracking-widest uppercase hover:underline">Discuss Gifting <i data-lucide="arrow-right" class="w-3 h-3 inline ml-1"></i></a>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card interactive-card p-8 border border-neutral-900 hover:border-[#111111]/20 bg-neutral-950/20 rounded-sm hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)] transition-all duration-300 flex flex-col justify-between h-[250px]">
+          <div class="space-y-4">
+            <i data-lucide="package-open" class="w-6 h-6 text-[#111111]"></i>
+            <h3 class="font-serif-luxury text-xl font-medium tracking-wide dark:text-neutral-100 text-neutral-900">Bespoke Rigid Packaging</h3>
+            <p class="text-xs text-neutral-400 font-light leading-relaxed">Your frames and albums packed securely inside custom matte-black textured rigid storage boxes wrapped in golden silk ribbons.</p>
+          </div>
+          <a href="#products-showcase" class="text-xs text-[#111111] font-semibold tracking-widest uppercase hover:underline">View Pack <i data-lucide="arrow-right" class="w-3 h-3 inline ml-1"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT SHOWCASE (E-COMMERCE) ==================== -->
+  <section id="products-showcase" class="relative py-28 bg-[#111111]/20 z-10 border-t dark:border-neutral-900 border-neutral-200/80">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center space-y-16">
+      
+      <!-- Section Title -->
+      <div class="space-y-4">
+        <span class="font-sans-luxury text-[10px] font-semibold uppercase tracking-[0.3em] text-[#111111]">Artisan Shop</span>
+        <h2 class="font-serif-luxury text-4xl md:text-5xl font-light tracking-tight dark:text-neutral-100 text-neutral-900">
+          The Bespoke Catalog
+        </h2>
+        <div class="w-12 h-[1px] bg-[#111111] mx-auto mt-6"></div>
+      </div>
+
+      <!-- Product Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Product 1: The Aurelia Frame -->
+        <div class="product-card interactive-card group p-4 dark:bg-[#111111] bg-white border border-neutral-900 rounded-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 relative text-left">
+          <!-- Wishlist Floating Icon -->
+          <button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-neutral-950/65 flex items-center justify-center text-neutral-400 hover:text-red-500 transition-colors pointer-events-auto z-20 cursor-pointer" title="Add to Wishlist">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+          </button>
+          
+          <!-- Image frame mockup -->
+          <div class="h-64 overflow-hidden rounded-sm relative bg-neutral-950 flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-10"></div>
+            <img src="assets/hero_portrait.png" alt="The Aurelia Frame" class="max-h-full object-contain border-4 border-[#111111] p-2 shadow-2xl transition-transform duration-700 group-hover:scale-105">
+          </div>
+
+          <!-- Product Details -->
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif-luxury text-lg font-medium text-neutral-100 dark:text-neutral-100 text-neutral-900">The Aurelia Frame</h3>
+              <span class="text-sm font-semibold text-[#111111]">INR 28,000.00</span>
+            </div>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Bevel-cut solid oak core wrapped manually in double gold leaf leafing. Complemented by archival ivory matting.</p>
+            
+            <button data-product-id="prod-aurelia" data-product-name="The Aurelia Gold Frame" data-product-price="28000.00" data-product-image="assets/hero_portrait.png" class="add-to-cart-trigger w-full mt-4 bg-neutral-900 border border-[#111111]/35 hover:border-[#111111] hover:bg-[#111111] hover:text-[#0A0A0A] text-[#111111] font-semibold text-[10px] tracking-[0.2em] uppercase py-3.5 px-4 rounded transition-all duration-300 cursor-pointer text-center">
+              Purchase Frame
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 2: Imperial Leather Album -->
+        <div class="product-card interactive-card group p-4 dark:bg-[#111111] bg-white border border-neutral-900 rounded-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 relative text-left">
+          <button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-neutral-950/65 flex items-center justify-center text-neutral-400 hover:text-red-500 transition-colors pointer-events-auto z-20 cursor-pointer" title="Add to Wishlist">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+          </button>
+          
+          <div class="h-64 overflow-hidden rounded-sm relative bg-neutral-950 flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-10"></div>
+            <img src="assets/collection_wedding.png" alt="Imperial Leather Album" class="max-h-full object-contain shadow-2xl transition-transform duration-700 group-hover:scale-105 rounded">
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif-luxury text-lg font-medium text-neutral-100 dark:text-neutral-100 text-neutral-900">Imperial Album</h3>
+              <span class="text-sm font-semibold text-[#111111]">INR 45,000.00</span>
+            </div>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Premium black grained Nappa leather layout binding 30 custom layflat thick fine-art pages with archival protection sheet overlays.</p>
+            
+            <button data-product-id="prod-imperial" data-product-name="Imperial Leather Album" data-product-price="45000.00" data-product-image="assets/collection_wedding.png" class="add-to-cart-trigger w-full mt-4 bg-neutral-900 border border-[#111111]/35 hover:border-[#111111] hover:bg-[#111111] hover:text-[#0A0A0A] text-[#111111] font-semibold text-[10px] tracking-[0.2em] uppercase py-3.5 px-4 rounded transition-all duration-300 cursor-pointer text-center">
+              Purchase Album
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 3: Minimalist Acrylic Block -->
+        <div class="product-card interactive-card group p-4 dark:bg-[#111111] bg-white border border-neutral-900 rounded-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 relative text-left">
+          <button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-neutral-950/65 flex items-center justify-center text-neutral-400 hover:text-red-500 transition-colors pointer-events-auto z-20 cursor-pointer" title="Add to Wishlist">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+          </button>
+          
+          <div class="h-64 overflow-hidden rounded-sm relative bg-neutral-950 flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-10"></div>
+            <img src="assets/collection_acrylic.png" alt="Minimalist Acrylic Block" class="max-h-full object-contain shadow-2xl transition-transform duration-700 group-hover:scale-105 rounded">
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif-luxury text-lg font-medium text-neutral-100 dark:text-neutral-100 text-neutral-900">Acrylic Block</h3>
+              <span class="text-sm font-semibold text-[#111111]">INR 19,000.00</span>
+            </div>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">1.5-inch diamond-polished acrylic block, fusing photo prints directly inside the crystalline shield for high luminosity.</p>
+            
+            <button data-product-id="prod-acrylic" data-product-name="Minimalist Acrylic Block" data-product-price="19000.00" data-product-image="assets/collection_acrylic.png" class="add-to-cart-trigger w-full mt-4 bg-neutral-900 border border-[#111111]/35 hover:border-[#111111] hover:bg-[#111111] hover:text-[#0A0A0A] text-[#111111] font-semibold text-[10px] tracking-[0.2em] uppercase py-3.5 px-4 rounded transition-all duration-300 cursor-pointer text-center">
+              Purchase Block
+            </button>
+          </div>
+        </div>
+
+        <!-- Product 4: Vintage Walnut Frame -->
+        <div class="product-card interactive-card group p-4 dark:bg-[#111111] bg-white border border-neutral-900 rounded-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 relative text-left">
+          <button class="absolute top-6 right-6 w-8 h-8 rounded-full bg-neutral-950/65 flex items-center justify-center text-neutral-400 hover:text-red-500 transition-colors pointer-events-auto z-20 cursor-pointer" title="Add to Wishlist">
+            <i data-lucide="heart" class="w-4 h-4"></i>
+          </button>
+          
+          <div class="h-64 overflow-hidden rounded-sm relative bg-neutral-950 flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-10"></div>
+            <!-- Showcase wood style texture using vignette styling -->
+            <img src="assets/collection_wallart.png" alt="Vintage Walnut Frame" class="max-h-full object-contain border-4 border-amber-900/60 p-2 shadow-2xl transition-transform duration-700 group-hover:scale-105 rounded">
+          </div>
+
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif-luxury text-lg font-medium text-neutral-100 dark:text-neutral-100 text-neutral-900">Vintage Walnut</h3>
+              <span class="text-sm font-semibold text-[#111111]">INR 32,000.00</span>
+            </div>
+            <p class="text-xs text-neutral-400 font-light line-clamp-2">Fine aged American walnut profiles oiled manually with custom satin coatings and layered over an ivory linen base mat.</p>
+            
+            <button data-product-id="prod-walnut" data-product-name="Vintage Walnut Frame" data-product-price="32000.00" data-product-image="assets/collection_wallart.png" class="add-to-cart-trigger w-full mt-4 bg-neutral-900 border border-[#111111]/35 hover:border-[#111111] hover:bg-[#111111] hover:text-[#0A0A0A] text-[#111111] font-semibold text-[10px] tracking-[0.2em] uppercase py-3.5 px-4 rounded transition-all duration-300 cursor-pointer text-center">
+              Purchase Frame
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bespoke Memory Customize Prompt CTA -->
+      <div class="glass-panel-dark rounded p-8 md:p-12 text-center max-w-4xl mx-auto space-y-6 shadow-2xl relative overflow-hidden dark:bg-[rgba(17,17,17,0.7)] bg-[rgba(255,255,255,0.85)] border dark:border-[rgba(17,17,17,0.06)] border-[rgba(17,17,17,0.06)]">
+        <!-- Floating highlight inside custom panel -->
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#111111]/5 via-transparent to-transparent pointer-events-none"></div>
+        
+        <h3 class="font-serif-luxury text-2xl md:text-3xl font-light text-neutral-100 dark:text-neutral-100 text-neutral-900">Have a Bespoke Art Project?</h3>
+        <p class="text-xs md:text-sm text-neutral-400 font-light max-w-2xl mx-auto leading-relaxed">
+          From massive residential statement installations to curated legacy gallery walls, our framing architects collaborate with decorators, designers, and legacy families.
+        </p>
+        <button class="open-customizer-trigger bg-[#111111] hover:bg-[#222222] text-[#EFE9DD] font-semibold text-xs tracking-[0.2em] uppercase py-4.5 px-10 rounded-full transition-all duration-300 shadow-[0_4px_25px_rgba(17,17,17,0.06)] cursor-pointer inline-flex items-center gap-2">
+          Open Digital Studio <i data-lucide="crop" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIAL + NEWSLETTER SECTION ==================== -->
+  <section class="relative py-28 z-10">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Column 1: Testimonial reviews (Left) -->
+        <div class="lg:col-span-6 space-y-10">
+          <div class="space-y-4">
+            <span class="font-sans-luxury text-[10px] font-semibold uppercase tracking-[0.3em] text-[#111111]">Patron Reviews</span>
+            <h2 class="font-serif-luxury text-4xl md:text-5xl font-light tracking-tight dark:text-neutral-100 text-neutral-900">
+              Legacy Retold
+            </h2>
+            <div class="w-12 h-[1px] bg-[#111111] mt-6"></div>
+          </div>
+
+          <!-- Reviews stacked -->
+          <div class="space-y-8">
+            <!-- Review 1 -->
+            <div class="p-6 border-l-2 border-[#111111]/35 bg-neutral-950/20 pl-6 space-y-3 rounded-r-md">
+              <p class="font-serif-luxury text-base text-neutral-200 dark:text-neutral-200 text-neutral-800 italic font-light leading-relaxed">
+                "Our wedding albums were crafted with such astonishing weight and tactile elegance. Opening them feels like walking into an editorial art gallery. Peerless quality."
+              </p>
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-0.5 bg-[#111111]"></span>
+                <span class="font-sans-luxury text-[10px] font-bold tracking-widest text-[#111111] uppercase">Adrienne & Victoria, Milan</span>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="p-6 border-l-2 border-[#111111]/35 bg-neutral-950/20 pl-6 space-y-3 rounded-r-md">
+              <p class="font-serif-luxury text-base text-neutral-200 dark:text-neutral-200 text-neutral-800 italic font-light leading-relaxed">
+                "The 3D showcase rendering gave me absolute visual confidence. When the massive Aurelia gold frame arrived inside its dark silk rigid box, it matched the WebGL render line-for-line."
+              </p>
+              <div class="flex items-center gap-3">
+                <span class="w-3 h-0.5 bg-[#111111]"></span>
+                <span class="font-sans-luxury text-[10px] font-bold tracking-widest text-[#111111] uppercase">Alexander Drake, NYC Curators</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Newsletter capture with Gift packaging visual (Right) -->
+        <div class="lg:col-span-6">
+          <div class="glass-panel-dark rounded p-8 md:p-12 text-center space-y-8 shadow-[0_20px_60px_rgba(0,0,0,0.6)] dark:bg-[rgba(17,17,17,0.7)] bg-[rgba(255,255,255,0.85)] border dark:border-[rgba(17,17,17,0.06)] border-[rgba(17,17,17,0.06)] relative overflow-hidden">
+            <!-- Box Image packaging overlay -->
+            <div class="h-44 overflow-hidden rounded relative flex items-center justify-center p-2 mb-2 bg-[#0A0A0A]/40">
+              <img src="assets/luxury_gift_box.png" alt="FRAMEX Luxury Rigid Gift Box Packaging" class="max-h-full object-contain shadow-2xl transition-transform duration-700 hover:scale-105">
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="font-serif-luxury text-2xl font-light text-neutral-100 dark:text-neutral-100 text-neutral-900">Bespoke Invitations</h3>
+              <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                Subscribe to receive private invitations to our seasonal artifact releases, vintage molding launches, and curated design workshops.
+              </p>
+            </div>
+
+            <!-- Email Capture form -->
+            <form onsubmit="event.preventDefault(); alert('Signed up successfully!');" class="space-y-4">
+              <div class="flex border border-neutral-800 dark:border-neutral-800 border-neutral-300 rounded overflow-hidden">
+                <input type="email" placeholder="Your legacy email..." required class="bg-neutral-950/60 dark:bg-neutral-950/60 bg-neutral-100 text-neutral-200 dark:text-neutral-200 text-neutral-950 py-3.5 px-4 text-xs font-light outline-none flex-1 focus:bg-neutral-900 transition-colors">
+                <button type="submit" class="bg-[#111111] hover:bg-[#222222] text-[#0A0A0A] font-semibold text-[10px] tracking-widest uppercase px-6 transition-colors cursor-pointer">
+                  Subscribe
+                </button>
+              </div>
+              <p class="text-[9px] text-neutral-500 uppercase tracking-widest">Zero clutter. Only editorial luxury catalog updates.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="relative pt-20 pb-12 z-10 border-t dark:border-neutral-950 border-neutral-200 bg-[#FAF9F5] dark:bg-[#080808]">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 space-y-16">
+      
+      <!-- Four Column Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="space-y-5">
+          <h4 class="font-serif-luxury text-2xl font-light tracking-[0.1em] text-neutral-100 dark:text-neutral-100 text-neutral-900">FRAMEX<span class="text-[#111111]">.</span></h4>
+          <p class="text-xs text-neutral-400 font-light leading-relaxed">
+            Museum-grade handcrafted custom frames and leather layflat wedding albums engineered to secure high-fashion family legacies forever.
+          </p>
+          <div class="flex items-center gap-4 text-neutral-500">
+            <a href="#" class="hover:text-[#111111] transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-[#111111] transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+            <a href="#" class="hover:text-[#111111] transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Portfolios -->
+        <div class="space-y-5">
+          <h5 class="font-sans-luxury text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]">Collections</h5>
+          <ul class="space-y-3 text-xs text-neutral-400 font-light uppercase tracking-wider">
+            <li><a href="#collections" class="hover:text-[#111111] transition-colors">Wedding Albums</a></li>
+            <li><a href="#collections" class="hover:text-[#111111] transition-colors">Luxury Frames</a></li>
+            <li><a href="#collections" class="hover:text-[#111111] transition-colors">Acrylic Glass</a></li>
+            <li><a href="#collections" class="hover:text-[#111111] transition-colors">Vintage reserve</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Custom Studio -->
+        <div class="space-y-5">
+          <h5 class="font-sans-luxury text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]">Services</h5>
+          <ul class="space-y-3 text-xs text-neutral-400 font-light uppercase tracking-wider">
+            <li><button class="open-customizer-trigger hover:text-[#111111] transition-colors text-left cursor-pointer">Frame Designer</button></li>
+            <li><a href="#services" class="hover:text-[#111111] transition-colors">Fine-art printing</a></li>
+            <li><a href="#services" class="hover:text-[#111111] transition-colors">Gallery Layout Setup</a></li>
+            <li><a href="#services" class="hover:text-[#111111] transition-colors">Corporate Gifting</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="space-y-5">
+          <h5 class="font-sans-luxury text-[10px] font-bold uppercase tracking-[0.2em] text-[#111111]">Concierge</h5>
+          <ul class="space-y-3 text-xs text-neutral-400 font-light">
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-[#111111]"></i> 
+              <a href="mailto:brandora006@gmail.com" class="hover:text-[#111111] transition-colors">brandora006@gmail.com</a>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-[#111111] mt-0.5"></i>
+              <span class="flex flex-col">
+                <a href="tel:+919037946820" class="hover:text-[#111111] transition-colors">+91 9037946820</a>
+                <a href="tel:+918921841432" class="hover:text-[#111111] transition-colors">+91 8921841432</a>
+              </span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#111111] mt-0.5"></i>
+              <span>Thrissur, Kerala - 680306</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Divider line -->
+      <div class="border-t dark:border-neutral-900/60 border-neutral-300/40 w-full pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <span class="text-[10px] text-neutral-500 uppercase tracking-widest">&copy; 2026 FRAMEX Inc. All rights reserved. Handcrafted Globally.</span>
+        <div class="flex items-center gap-6 text-[10px] text-neutral-500 uppercase tracking-widest">
+          <a href="#" class="hover:text-[#111111]">Privacy Policy</a>
+          <a href="#" class="hover:text-[#111111]">Terms of Assembly</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING INTERACTIVE WIDGETS ==================== -->
+
+  <!-- A. E-COMMERCE CART DRAWER -->
+  <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[450px] dark:bg-[#111111] bg-white text-neutral-100 z-50 shadow-2xl translate-x-full transition-transform duration-500 ease-in-out border-l border-neutral-800">
+    <div class="h-full flex flex-col justify-between p-8 dark:text-neutral-100 text-neutral-900">
+      
+      <!-- Top Cart Title -->
+      <div class="flex items-center justify-between border-b dark:border-neutral-800 border-neutral-200 pb-4">
+        <h3 class="font-serif-luxury text-2xl font-light tracking-wide flex items-center gap-2">
+          Your Cart <span class="cart-count-badge text-xs font-sans font-bold bg-[#111111] text-[#0A0A0A] w-5 h-5 rounded-full flex items-center justify-center opacity-0">0</span>
+        </h3>
+        <button id="close-cart-btn" class="p-2 text-neutral-400 hover:text-red-500 transition-colors cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-cart-state" class="flex-1 flex flex-col items-center justify-center text-center space-y-4">
+        <i data-lucide="shopping-bag" class="w-10 h-10 text-neutral-600 animate-bounce"></i>
+        <h4 class="font-serif-luxury text-lg font-light text-neutral-400">Your legacy cart is empty</h4>
+        <p class="text-xs text-neutral-500 max-w-xs mx-auto leading-relaxed">
+          Configure a digital memory or purchase an Aurelia Gold Frame to start your private collection.
+        </p>
+      </div>
+
+      <!-- Cart list & Subtotals -->
+      <div id="cart-content-area" class="flex-grow flex flex-col justify-between hidden pt-4 overflow-y-auto">
+        <!-- List container -->
+        <div id="cart-items-list" class="flex-1 space-y-4 overflow-y-auto pr-1">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Calculations -->
+        <div class="border-t dark:border-neutral-800 border-neutral-200 pt-6 mt-4 space-y-4">
+          <div class="flex items-center justify-between text-sm uppercase tracking-widest font-sans-luxury text-neutral-400">
+            <span>Archival Subtotal:</span>
+            <span id="cart-subtotal-amount" class="text-[#111111] font-semibold text-base">INR 0.00</span>
+          </div>
+          <p class="text-[9px] text-neutral-500 uppercase tracking-widest leading-relaxed">
+            * Fully insured museum packaging and global secure courier tracked shipping calculated at checkout.
+          </p>
+          <button onclick="alert('Proceeding to luxury checkout flow...');" class="w-full bg-[#111111] hover:bg-[#222222] text-[#0A0A0A] font-semibold text-xs tracking-[0.25em] uppercase py-4 rounded shadow-2xl transition-all duration-300 cursor-pointer text-center">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cart Background Overlay -->
+  <div id="cart-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden"></div>
+
+  <!-- B. EDITORIAL SEARCH OVERLAY -->
+  <div id="search-overlay" class="fixed inset-0 bg-[#0A0A0A]/95 backdrop-blur-lg z-50 hidden flex-col items-center justify-center p-6 text-center select-none">
+    <button id="close-search-btn" class="absolute top-10 right-10 p-3 text-neutral-400 hover:text-red-500 transition-colors cursor-pointer">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    
+    <div class="max-w-2xl w-full space-y-8">
+      <h3 class="font-serif-luxury text-3xl font-light text-[#111111] tracking-wider uppercase">Search The Studio</h3>
+      <div class="border-b border-[#111111]/30 pb-3 flex items-center">
+        <input type="text" placeholder="Type frames, albums, sizing..." class="w-full text-center bg-transparent text-xl font-light tracking-wide outline-none text-neutral-100 placeholder-neutral-600 focus:placeholder-neutral-800">
+        <i data-lucide="search" class="w-5 h-5 text-[#111111] ml-2 animate-pulse"></i>
+      </div>
+      <p class="text-xs text-neutral-500 uppercase tracking-widest">Hit enter to query. E.g. "Aurelia Frame", "Wedding albums size", "Acrylic Blocks"</p>
+    </div>
+  </div>
+
+  <!-- C. DESIGN YOUR MEMORY CUSTOMIZER MODAL -->
+  <div id="customizer-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex-col items-center justify-center p-4">
+    <div class="glass-panel-dark max-w-4xl w-full h-[90vh] md:h-auto max-h-[90vh] rounded-lg overflow-hidden flex flex-col md:grid md:grid-cols-12 shadow-2xl relative">
+      
+      <!-- Close Customizer Button -->
+      <button id="close-customizer-btn" class="absolute top-4 right-4 p-2 text-neutral-400 hover:text-red-500 transition-colors z-20 cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Left Column: Photographic Preview -->
+      <div class="md:col-span-6 bg-[#0E0E0E] flex flex-col items-center justify-center p-6 md:p-10 border-b md:border-b-0 md:border-r border-neutral-900 relative">
+        <span class="absolute top-6 left-6 font-sans-luxury text-[9px] font-bold text-neutral-500 uppercase tracking-[0.2em]">Preview Console</span>
+        
+        <!-- Frame mockup base -->
+        <div id="customizer-image-preview" class="w-[200px] h-[270px] md:w-[240px] md:h-[320px] bg-neutral-900 border-4 border-[#111111] p-4 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-neutral-800 transition-colors shadow-2xl rounded-sm">
+          <i data-lucide="upload" class="w-8 h-8 text-[#111111]/50 mb-3 animate-pulse"></i>
+          <span class="font-sans-luxury text-[10px] font-semibold text-neutral-300 uppercase tracking-wider">Upload Digital Memory</span>
+          <p class="text-[9px] text-neutral-500 mt-1 max-w-[150px] leading-relaxed uppercase">JPEG or PNG file. Archival color calibration applied automatically.</p>
+          <input type="file" id="cust-upload" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+        </div>
+      </div>
+
+      <!-- Right Column: Configurations Options -->
+      <div class="md:col-span-6 p-6 md:p-10 overflow-y-auto flex flex-col justify-between h-full md:h-[600px] text-left">
+        
+        <div class="space-y-6">
+          <div class="space-y-1">
+            <span class="font-sans-luxury text-[9px] font-semibold text-[#111111] uppercase tracking-[0.25em]">Memory Studio</span>
+            <h3 class="font-serif-luxury text-2xl font-light text-neutral-100 dark:text-neutral-100 text-neutral-900">Custom Frame Setup</h3>
+          </div>
+
+          <!-- Section 1: Choose sizing -->
+          <div class="space-y-3">
+            <label class="block font-sans-luxury text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">1. Dimension Profile</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button data-size='12" x 18"' data-price="18000" class="size-option border border-neutral-800 p-2.5 text-center text-xs rounded transition-colors hover:border-[#111111] cursor-pointer text-neutral-300">
+                12" x 18"<br><span class="text-[10px] text-neutral-500 font-semibold">INR 18,000.00</span>
+              </button>
+              <button data-size='16" x 24"' data-price="24000" class="size-option border border-[#111111] text-[#111111] p-2.5 text-center text-xs rounded transition-colors hover:border-[#111111] cursor-pointer">
+                16" x 24"<br><span class="text-[10px] text-[#111111]/80 font-semibold">INR 24,000.00</span>
+              </button>
+              <button data-size='24" x 36"' data-price="32000" class="size-option border border-neutral-800 p-2.5 text-center text-xs rounded transition-colors hover:border-[#111111] cursor-pointer text-neutral-300">
+                24" x 36"<br><span class="text-[10px] text-neutral-500 font-semibold">INR 32,000.00</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Section 2: Choose Frame Material -->
+          <div class="space-y-3">
+            <label class="block font-sans-luxury text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-400">2. Molding Finish</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button data-material="Bespoke Gold" data-surcharge="0" class="material-option border border-[#111111] text-[#111111] p-2.5 text-center text-xs rounded transition-colors hover:border-[#111111] cursor-pointer">
+                Bespoke Gold<br><span class="text-[10px] text-[#111111]/80 font-semibold">Standard</span>
+              </button>
+              <button data-material="Vintage Walnut" data-surcharge="4000" class="material-option border border-neutral-800 p-2.5 text-center text-xs rounded transition-colors hover:border-[#111111] cursor-pointer text-neutral-300">
+                Vintage Walnut<br><span class="text-[10px] text-neutral-500 font-semibold">+INR 4,000.00</span>
+              </button>
+              <button data-material="Acrylic Block" data-surcharge="6000" class="material-option border border-neutral-800 p-2.5 text-center text-xs rounded transition-colors hover:border-[#111111] cursor-pointer text-neutral-300">
+                Shadow Acrylic<br><span class="text-[10px] text-neutral-500 font-semibold">+INR 6,000.00</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price display and purchase trigger -->
+        <div class="border-t border-neutral-900 pt-6 mt-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs uppercase tracking-widest text-neutral-400 font-semibold">Bespoke Estimate:</span>
+            <span id="customizer-total-price" class="text-xl font-bold text-[#111111]">INR 24,000.00</span>
+          </div>
+          <button id="add-custom-to-cart-btn" class="w-full bg-[#111111] hover:bg-[#222222] text-[#EFE9DD] font-semibold text-xs tracking-[0.25em] uppercase py-4 rounded shadow-xl transition-all duration-300 cursor-pointer text-center">
+            Mount and Add to Cart
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- D. GLASSMORPHISM AI CHATBOT CONCIERGE -->
+  <!-- Floating Avatar Button -->
+  <button id="chatbot-toggle" class="fixed bottom-6 right-6 w-14 h-14 rounded-full glass-panel-dark shadow-[0_10px_30px_rgba(17,17,17,0.06)] flex items-center justify-center text-[#111111] border border-[#111111]/35 cursor-pointer z-50 hover:scale-110 hover:shadow-[0_12px_35px_rgba(17,17,17,0.08)] transition-all duration-300" title="Open AI Concierge Chat">
+    <img src="assets/concierge_avatar.png" alt="Concierge Logo" class="absolute inset-0.5 rounded-full object-cover grayscale opacity-75">
+    <span class="w-3.5 h-3.5 rounded-full bg-[#111111] absolute -top-0.5 -right-0.5 border border-[#0A0A0A] animate-pulse"></span>
+    <i data-lucide="message-square" class="w-5 h-5 relative z-10 drop-shadow-md"></i>
+  </button>
+
+  <!-- Chat Widget Container -->
+  <div id="chatbot-container" class="fixed bottom-24 right-6 w-[340px] h-[460px] glass-panel-dark rounded-xl flex-col justify-between shadow-2xl border border-[#111111]/25 z-50 hidden overflow-hidden">
+    <!-- Header info -->
+    <div class="p-4 border-b border-[#111111]/15 bg-[#111111]/80 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full border border-[#111111]/30 bg-neutral-900 relative overflow-hidden flex-shrink-0">
+          <img src="assets/concierge_avatar.png" alt="AI Chatbot Concierge" class="w-full h-full object-cover">
+        </div>
+        <div class="text-left leading-tight">
+          <h4 class="font-serif-luxury text-sm font-semibold tracking-wide text-neutral-100">FRAMEX Concierge</h4>
+          <span class="text-[9px] uppercase tracking-widest text-[#111111] flex items-center gap-1">
+            <span class="w-1 h-1 rounded-full bg-[#111111] animate-ping"></span> AI shopping agent
+          </span>
+        </div>
+      </div>
+      <button id="close-chatbot-btn" class="p-1 text-neutral-400 hover:text-red-500 transition-colors cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- Message List -->
+    <div id="chat-messages-list" class="flex-1 p-4 overflow-y-auto space-y-4 flex flex-col justify-start">
+      <!-- Welcome message -->
+      <div class="self-start bg-neutral-900/80 border border-[#111111]/15 rounded-xl px-4 py-2.5 max-w-[85%] text-xs font-light text-neutral-300 relative shadow-md">
+        <div class="flex items-center gap-1.5 mb-1 text-[10px] text-[#111111] font-sans-luxury tracking-wider font-semibold uppercase">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#111111]"></span>
+          FRAMEX Concierge
+        </div>
+        <p class="leading-relaxed leading-5">Welcome to FRAMEX. How may I guide your family legacy or frame customization inquiries today?</p>
+      </div>
+    </div>
+
+    <!-- Suggested questions drawer -->
+    <div class="px-4 pb-2 text-left">
+      <div class="flex flex-wrap gap-1.5">
+        <button class="chat-suggested-q border border-[#111111]/15 hover:border-[#111111] bg-neutral-950/40 text-[9px] font-light tracking-wider text-neutral-300 uppercase py-1.5 px-3 rounded-full cursor-pointer transition-colors max-w-full truncate">
+          What is fine-art print?
+        </button>
+        <button class="chat-suggested-q border border-[#111111]/15 hover:border-[#111111] bg-neutral-950/40 text-[9px] font-light tracking-wider text-neutral-300 uppercase py-1.5 px-3 rounded-full cursor-pointer transition-colors max-w-full truncate">
+          How are custom sizes handled?
+        </button>
+        <button class="chat-suggested-q border border-[#111111]/15 hover:border-[#111111] bg-neutral-950/40 text-[9px] font-light tracking-wider text-neutral-300 uppercase py-1.5 px-3 rounded-full cursor-pointer transition-colors max-w-full truncate">
+          Secure packaging & delivery
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty Input area (designed for suggestions only to feel highly concierge-controlled) -->
+    <div class="p-3 bg-neutral-950/50 border-t border-[#111111]/10 flex items-center justify-between text-[10px] text-neutral-500 tracking-wider uppercase font-semibold pl-4">
+      <span>Concierge Select Mode</span>
+      <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#111111]"></i>
+    </div>
+
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
+
+
