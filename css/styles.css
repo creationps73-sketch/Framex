@@ -132,3 +132,35 @@ body {
 .luxury-product-card:hover img {
   transform: scale(1.03);
 }
+
+/* Infinite Marquee for Reviews */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 32px;
+  padding-right: 32px; /* To maintain gap before repeat */
+  animation: scroll-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.review-card {
+  width: 420px;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+  white-space: normal;
+}

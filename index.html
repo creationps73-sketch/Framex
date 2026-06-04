@@ -41,15 +41,25 @@
 
     <!-- NAVIGATION -->
     <nav id="navbar" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md transition-all duration-300 py-6">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="#" class="text-xl font-semibold tracking-tight">Framex</a>
-            <div class="hidden md:flex gap-8">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex justify-between items-center relative">
+            <div class="w-1/4">
+                <a href="#" class="text-xl font-semibold tracking-tight">Framex</a>
+            </div>
+            
+            <div class="hidden md:flex gap-8 absolute left-1/2 -translate-x-1/2">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#services" class="nav-link">Services</a>
+                <a href="#works" class="nav-link">Works</a>
                 <a href="#products" class="nav-link">Products</a>
-                <a href="#contact" class="nav-link">Contact</a>
             </div>
+            
+            <div class="w-1/4 flex justify-end hidden md:flex">
+                <a href="#contact" class="bg-[#111111] text-white rounded-full px-7 py-3.5 text-sm font-medium hover:bg-black/80 transition-all duration-300">
+                    Contact
+                </a>
+            </div>
+            
             <!-- Mobile Menu Toggle -->
             <button class="md:hidden" id="mobile-menu-btn">
                 <i data-lucide="menu" class="w-6 h-6"></i>
@@ -124,6 +134,196 @@
                 </div>
                 <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
                     <h3 class="text-xl font-semibold">06 &mdash; Custom Photo Frames</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKS SECTION -->
+    <section id="works" class="py-32 px-6 md:px-12 bg-bg-secondary">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="mb-20 gsap-fade-up">
+                <h2 class="text-section font-semibold">Selected Works</h2>
+                <p class="text-text-secondary text-lg mt-4 max-w-xl">A collection of creative projects crafted with precision, strategy, and timeless aesthetics.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
+                <!-- Work 1 -->
+                <div class="luxury-product-card group cursor-pointer border border-border-subtle bg-white hover:-translate-y-[5px] transition-all duration-400 ease-out p-0 block rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div class="img-wrapper aspect-[4/3] bg-[#FAFAFA] relative overflow-hidden">
+                        <img src="assets/work_brand.png" alt="Brand Identity" class="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="p-8">
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Brand Identity</span>
+                        <h3 class="text-xl font-semibold tracking-tight">Premium Stationery</h3>
+                    </div>
+                </div>
+
+                <!-- Work 2 -->
+                <div class="luxury-product-card group cursor-pointer border border-border-subtle bg-white hover:-translate-y-[5px] transition-all duration-400 ease-out p-0 block rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div class="img-wrapper aspect-[4/3] bg-[#FAFAFA] relative overflow-hidden">
+                        <img src="assets/work_logo.png" alt="Logo Design" class="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="p-8">
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Logo Design</span>
+                        <h3 class="text-xl font-semibold tracking-tight">Embossed Mark</h3>
+                    </div>
+                </div>
+
+                <!-- Work 3 -->
+                <div class="luxury-product-card group cursor-pointer border border-border-subtle bg-white hover:-translate-y-[5px] transition-all duration-400 ease-out p-0 block rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div class="img-wrapper aspect-[4/3] bg-[#FAFAFA] relative overflow-hidden">
+                        <img src="assets/work_social.png" alt="Social Media Design" class="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="p-8">
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Social Media Design</span>
+                        <h3 class="text-xl font-semibold tracking-tight">Digital Curation</h3>
+                    </div>
+                </div>
+
+                <!-- Work 4 -->
+                <div class="luxury-product-card group cursor-pointer border border-border-subtle bg-white hover:-translate-y-[5px] transition-all duration-400 ease-out p-0 block rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div class="img-wrapper aspect-[4/3] bg-[#FAFAFA] relative overflow-hidden">
+                        <img src="assets/work_poster.png" alt="Poster Design" class="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="p-8">
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Poster Design</span>
+                        <h3 class="text-xl font-semibold tracking-tight">Typography Layout</h3>
+                    </div>
+                </div>
+
+                <!-- Work 5 -->
+                <div class="luxury-product-card group cursor-pointer border border-border-subtle bg-white hover:-translate-y-[5px] transition-all duration-400 ease-out p-0 block rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div class="img-wrapper aspect-[4/3] bg-[#FAFAFA] relative overflow-hidden">
+                        <img src="assets/work_print.png" alt="Print Design" class="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="p-8">
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Print Design</span>
+                        <h3 class="text-xl font-semibold tracking-tight">Editorial Lookbook</h3>
+                    </div>
+                </div>
+
+                <!-- Work 6 -->
+                <div class="luxury-product-card group cursor-pointer border border-border-subtle bg-white hover:-translate-y-[5px] transition-all duration-400 ease-out p-0 block rounded-[20px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] overflow-hidden">
+                    <div class="img-wrapper aspect-[4/3] bg-[#FAFAFA] relative overflow-hidden">
+                        <img src="assets/work_frame.png" alt="Custom Frame Design" class="w-full h-full object-cover transition-transform duration-400 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="p-8">
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Custom Frame Design</span>
+                        <h3 class="text-xl font-semibold tracking-tight">Bespoke Framing</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HAPPY CLIENTS -->
+    <section class="py-32 bg-bg-primary overflow-hidden">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 mb-16 text-center gsap-fade-up">
+            <h2 class="text-section font-semibold mb-4">Happy Clients</h2>
+            <p class="text-body text-text-secondary">Trusted by clients who value creativity, quality, and attention to detail.</p>
+        </div>
+
+        <div class="marquee-container w-full">
+            <div class="marquee-content">
+                <!-- Set 1 -->
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Framex delivered exactly what we envisioned. Clean, professional, and beautifully executed."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Arjun Nair</h4>
+                        <p class="text-sm text-text-secondary">Business Owner</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"The quality of the frame and design work exceeded our expectations."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Neha Thomas</h4>
+                        <p class="text-sm text-text-secondary">Photographer</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Exceptional creativity and attention to detail from start to finish."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Rahul Menon</h4>
+                        <p class="text-sm text-text-secondary">Brand Consultant</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Our brand identity feels premium and timeless thanks to Framex."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Anjali Krishnan</h4>
+                        <p class="text-sm text-text-secondary">Entrepreneur</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Professional communication, fast delivery, and outstanding results."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Vishnu Raj</h4>
+                        <p class="text-sm text-text-secondary">Marketing Manager</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"The perfect balance of creativity and elegance."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Athira Joseph</h4>
+                        <p class="text-sm text-text-secondary">Creative Director</p>
+                    </div>
+                </div>
+
+                <!-- Set 2 -->
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Framex delivered exactly what we envisioned. Clean, professional, and beautifully executed."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Arjun Nair</h4>
+                        <p class="text-sm text-text-secondary">Business Owner</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"The quality of the frame and design work exceeded our expectations."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Neha Thomas</h4>
+                        <p class="text-sm text-text-secondary">Photographer</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Exceptional creativity and attention to detail from start to finish."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Rahul Menon</h4>
+                        <p class="text-sm text-text-secondary">Brand Consultant</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Our brand identity feels premium and timeless thanks to Framex."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Anjali Krishnan</h4>
+                        <p class="text-sm text-text-secondary">Entrepreneur</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"Professional communication, fast delivery, and outstanding results."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Vishnu Raj</h4>
+                        <p class="text-sm text-text-secondary">Marketing Manager</p>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="text-[#D4AF37] mb-4 tracking-widest text-sm">★★★★★</div>
+                    <p class="text-lg italic text-text-primary mb-6 leading-relaxed">"The perfect balance of creativity and elegance."</p>
+                    <div>
+                        <h4 class="font-semibold text-text-primary">Athira Joseph</h4>
+                        <p class="text-sm text-text-secondary">Creative Director</p>
+                    </div>
                 </div>
             </div>
         </div>
