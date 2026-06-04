@@ -313,12 +313,18 @@ function initAIChatbot() {
   const closeChatbot = document.getElementById('close-chatbot-btn');
   const chatMessagesList = document.getElementById('chat-messages-list');
   const chatSuggestedQuestions = document.querySelectorAll('.chat-suggested-q');
+  const whatsappBtn = document.getElementById('whatsapp-btn');
 
   if (!chatbotToggle || !chatbotContainer) return;
 
   chatbotToggle.addEventListener('click', () => {
     chatbotContainer.classList.toggle('hidden');
     chatbotContainer.classList.toggle('flex');
+    
+    if (whatsappBtn) {
+      whatsappBtn.classList.toggle('hidden');
+      whatsappBtn.classList.toggle('flex');
+    }
     
     // Bounce chat icon
     if (typeof gsap !== 'undefined') {
@@ -330,6 +336,11 @@ function initAIChatbot() {
     closeChatbot.addEventListener('click', () => {
       chatbotContainer.classList.add('hidden');
       chatbotContainer.classList.remove('flex');
+      
+      if (whatsappBtn) {
+        whatsappBtn.classList.remove('hidden');
+        whatsappBtn.classList.add('flex');
+      }
     });
   }
 
