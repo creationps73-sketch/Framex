@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framex | Design Studio & Premium Photo Frames</title>
+    <meta name="description" content="Premium visual identities, creative designs, and custom photo frames that transform moments into lasting impressions.">
+    
+    <!-- Tailwind CSS v3 via CDN (Using v3 for arbitrary values compatibility) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'bg-primary': '#FFFFFF',
+              'bg-secondary': '#F7F7F7',
+              'text-primary': '#111111',
+              'text-secondary': '#666666',
+              'border-subtle': 'rgba(0, 0, 0, 0.08)'
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-bg-primary text-text-primary antialiased selection:bg-text-primary selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md transition-all duration-300 py-6">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold tracking-tight">Framex</a>
+            <div class="hidden md:flex gap-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden" id="mobile-menu-btn">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 px-6 md:px-12">
+        <div class="max-w-screen-2xl mx-auto w-full text-center flex flex-col items-center">
+            <h1 class="text-hero font-semibold text-text-primary max-w-5xl mx-auto mb-8 gsap-fade-up">
+                Design That Deserves To Be Framed.
+            </h1>
+            <p class="text-body text-text-secondary max-w-2xl mx-auto mb-12 gsap-fade-up delay-100">
+                Creating premium visual identities, creative designs, and custom photo frames that transform moments into lasting impressions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 gsap-fade-up delay-200">
+                <a href="#products" class="px-8 py-4 bg-text-primary text-white font-medium text-sm tracking-wide hover:bg-neutral-800 transition-colors duration-300">
+                    View Products
+                </a>
+                <a href="#services" class="px-8 py-4 bg-transparent text-text-primary border border-border-subtle font-medium text-sm tracking-wide hover:bg-bg-secondary transition-colors duration-300">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-32 px-6 md:px-12 bg-bg-secondary">
+        <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div class="w-full aspect-[4/5] overflow-hidden bg-white gsap-fade-up">
+                <img src="assets/about_studio.png" alt="PS Creations Studio" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105">
+            </div>
+            <div class="gsap-fade-up">
+                <h2 class="text-section font-semibold mb-8">About Framex</h2>
+                <p class="text-body text-text-secondary max-w-lg mb-8">
+                    We create thoughtful design experiences and handcrafted photo frames that combine creativity, quality, and timeless aesthetics. Every project is approached with attention to detail, ensuring a refined balance between visual beauty and meaningful storytelling.
+                </p>
+                <div class="space-y-3 text-text-primary text-sm font-medium tracking-wide">
+                    <p>Premium Craftsmanship</p>
+                    <p>Creative Excellence</p>
+                    <p>Timeless Design</p>
+                    <p>Luxury Presentation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-32 px-6 md:px-12 bg-bg-primary">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="mb-20 gsap-fade-up">
+                <h2 class="text-section font-semibold">Our Services</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service Cards -->
+                <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
+                    <h3 class="text-xl font-semibold">01 &mdash; Logo Design</h3>
+                </div>
+                <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
+                    <h3 class="text-xl font-semibold">02 &mdash; Brand Identity</h3>
+                </div>
+                <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
+                    <h3 class="text-xl font-semibold">03 &mdash; Social Media Design</h3>
+                </div>
+                <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
+                    <h3 class="text-xl font-semibold">04 &mdash; Poster Design</h3>
+                </div>
+                <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
+                    <h3 class="text-xl font-semibold">05 &mdash; Print Design</h3>
+                </div>
+                <div class="p-12 border border-border-subtle bg-white hover:-translate-y-2 transition-transform duration-500 ease-out group gsap-stagger-card">
+                    <h3 class="text-xl font-semibold">06 &mdash; Custom Photo Frames</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="py-32 px-6 md:px-12 bg-bg-secondary">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="mb-20 text-center gsap-fade-up">
+                <h2 class="text-section font-semibold">Selected Products</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+                <!-- Product 1 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_wooden.png" alt="Wooden Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Wooden Frame</h4>
+                            <p class="text-text-secondary text-sm">Classic Minimalist Oak</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$85</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_acrylic.png" alt="Acrylic Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Acrylic Frame</h4>
+                            <p class="text-text-secondary text-sm">Sleek Transparent Modern</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$110</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_wedding.png" alt="Wedding Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Wedding Frame</h4>
+                            <p class="text-text-secondary text-sm">Elegant White & Silver</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$150</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_family.png" alt="Family Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Family Frame</h4>
+                            <p class="text-text-secondary text-sm">Multi-photo Gallery</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$180</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_led.png" alt="LED Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">LED Frame</h4>
+                            <p class="text-text-secondary text-sm">Illuminated Backlight</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$220</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_collage.png" alt="Collage Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Collage Frame</h4>
+                            <p class="text-text-secondary text-sm">Geometric White Setup</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$130</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_canvas.png" alt="Canvas Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Canvas Frame</h4>
+                            <p class="text-text-secondary text-sm">Textured Art Canvas</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$95</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="group cursor-pointer gsap-product">
+                    <div class="aspect-[4/5] bg-bg-primary overflow-hidden mb-6">
+                        <img src="assets/prod_custom.png" alt="Custom Gift Frame" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                    </div>
+                    <div class="flex justify-between items-start transition-transform duration-500 group-hover:-translate-y-[5px]">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-1">Custom Gift Frame</h4>
+                            <p class="text-text-secondary text-sm">Bespoke Wrapped</p>
+                        </div>
+                        <span class="text-text-secondary text-sm">$160</span>
+                    </div>
+                    <div class="mt-4 opacity-0 -translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-text-primary hover:text-text-secondary transition-colors">View Product &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-32 px-6 md:px-12 bg-bg-primary">
+        <div class="max-w-screen-2xl mx-auto">
+            <h2 class="text-section font-semibold mb-24 max-w-2xl gsap-fade-up">Let's Create Something Meaningful.</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+                <div class="space-y-12 gsap-fade-up delay-100">
+                    <div>
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Email</span>
+                        <a href="mailto:creationps73@gmail.com" class="text-xl hover:text-text-secondary transition-colors">creationps73@gmail.com</a>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Phone</span>
+                        <a href="tel:+919037946820" class="text-xl hover:text-text-secondary transition-colors">+91 9037946820</a>
+                    </div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-widest text-text-secondary mb-2 font-semibold">Location</span>
+                        <p class="text-xl">Thrissur, Kerala &ndash; 680306</p>
+                    </div>
+                </div>
+
+                <div class="gsap-fade-up delay-200">
+                    <form class="space-y-8">
+                        <div>
+                            <input type="text" placeholder="Name" class="minimal-input" required>
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Email" class="minimal-input" required>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Subject" class="minimal-input" required>
+                        </div>
+                        <div>
+                            <textarea placeholder="Message" rows="1" class="minimal-input resize-none" required></textarea>
+                        </div>
+                        <div class="pt-4">
+                            <button type="submit" class="px-8 py-4 bg-text-primary text-white font-medium text-sm tracking-wide hover:bg-neutral-800 transition-colors duration-300 w-full sm:w-auto">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-bg-primary px-6 md:px-12 pb-12 pt-16 border-t border-border-subtle">
+        <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <span class="text-xl font-semibold tracking-tight">Framex</span>
+            
+            <div class="flex gap-8 text-sm">
+                <a href="#home" class="hover:text-text-secondary transition-colors">Home</a>
+                <a href="#about" class="hover:text-text-secondary transition-colors">About</a>
+                <a href="#services" class="hover:text-text-secondary transition-colors">Services</a>
+                <a href="#products" class="hover:text-text-secondary transition-colors">Products</a>
+                <a href="#contact" class="hover:text-text-secondary transition-colors">Contact</a>
+            </div>
+
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:text-text-secondary transition-colors">Instagram</a>
+                <a href="#" class="hover:text-text-secondary transition-colors">Behance</a>
+                <a href="#" class="hover:text-text-secondary transition-colors">Facebook</a>
+            </div>
+        </div>
+        <div class="max-w-screen-2xl mx-auto mt-12 pt-8 border-t border-border-subtle flex justify-between items-center text-xs text-text-secondary">
+            <span>&copy; 2026 Framex. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <!-- App JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
