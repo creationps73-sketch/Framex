@@ -102,3 +102,33 @@ body {
   opacity: 0;
   visibility: hidden;
 }
+
+/* Luxury Product Cards */
+.luxury-product-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.luxury-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.luxury-product-card .img-wrapper {
+  overflow: hidden;
+  /* Adds a subtle inner shadow to simulate realistic floor/wall contact if needed, but keeping it minimal */
+}
+
+.luxury-product-card img {
+  transition: transform 0.4s ease;
+}
+
+.luxury-product-card:hover img {
+  transform: scale(1.03);
+}
