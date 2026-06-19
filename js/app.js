@@ -112,11 +112,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
             
             const img = card.querySelector('.img-wrapper img').src;
             const title = card.querySelector('h4').innerText;
-            const price = card.querySelector('span').innerText;
+            const priceEl = card.querySelector('span');
+            const price = priceEl ? priceEl.innerText : '';
+            const descEl = card.querySelector('p');
+            const desc = descEl ? descEl.innerText : '';
 
             modalImg.src = img;
             modalTitle.innerText = title;
             modalPrice.innerText = price;
+            
+            // Hide price element in modal if there is no price
+            if (!price) {
+                modalPrice.style.display = 'none';
+            } else {
+                modalPrice.style.display = 'block';
+            }
+
+            const modalDesc = document.getElementById('modal-desc');
+            if (modalDesc) {
+                modalDesc.innerText = desc || 'Premium handcrafted frame featuring meticulous attention to detail and high-quality materials. Designed to elegantly showcase your most cherished memories.';
+            }
+
+            const waBtn = document.getElementById('modal-whatsapp-btn');
+            if (waBtn) {
+                const waNumbers = ['919037946820', '918921841432'];
+                const randomWa = waNumbers[Math.floor(Math.random() * waNumbers.length)];
+                const msg = encodeURIComponent(`Hi, I would like to get an enquiry about the ${title}.`);
+                waBtn.href = `https://wa.me/${randomWa}?text=${msg}`;
+            }
 
             // Remove previous extra images
             const extraImgs = modalImgContainer.querySelectorAll('.extra-img');
@@ -151,5 +174,58 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 modal.classList.add('hidden');
             }, 500);
         });
+    }
+
+    // 7. Form Submission Logic
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitBtnText = submitBtn ? submitBtn.querySelector('span') : null;
+    const submitLoader = document.getElementById('submit-loader');
+    const toast = document.getElementById('toast');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // UI Loading state
+            if(submitBtn) submitBtn.disabled = true;
+            if(submitBtnText) submitBtnText.innerText = 'Sending...';
+            if(submitLoader) submitLoader.classList.remove('hidden');
+
+            const formData = new FormData(contactForm);
+
+            fetch('https://formsubmit.co/ajax/creationps73@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Success
+                contactForm.reset();
+                showToast();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Something went wrong. Please try again.");
+            })
+            .finally(() => {
+                // Reset UI
+                if(submitBtn) submitBtn.disabled = false;
+                if(submitBtnText) submitBtnText.innerText = 'Submit';
+                if(submitLoader) submitLoader.classList.add('hidden');
+            });
+        });
+    }
+
+    function showToast() {
+        if (!toast) return;
+        toast.classList.remove('translate-y-[150%]', 'opacity-0');
+        // Need to recreate icons for dynamically shown element just in case
+        setTimeout(() => {
+            toast.classList.add('translate-y-[150%]', 'opacity-0');
+        }, 4000);
     }
 });
